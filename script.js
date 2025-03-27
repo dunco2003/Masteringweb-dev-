@@ -13,3 +13,16 @@ document.getElementById("registrationForm").addEventListener("submit", function(
         event.preventDefault();
     }
 });
+document.getElementById("shuffleBtn").addEventListener("click", function() {
+    let list = document.querySelector("#techList");
+    let items = Array.from(list.children);
+    
+    // Shuffle the list items randomly
+    items.sort(() => Math.random() - 0.5);
+    
+    // Clear and append shuffled items
+    list.innerHTML = "";
+    items.forEach(item => list.appendChild(item));
+});
+
+
